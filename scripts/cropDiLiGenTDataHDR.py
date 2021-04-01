@@ -109,8 +109,12 @@ if __name__ == '__main__':
         max_w = w if w > max_w else max_w
         print('\t BBox L %d R %d T %d B %d, H:%d W:%d, Padded: %d %d' % 
                 (l, r, t, b, h, w, r - l, b - t)) 
-        imsave(os.path.join(args.save_dir, d, args.mask_name), mask[t:b, l:r, :])
-        imsave(os.path.join(args.save_dir, d, args.normal_name), normal[t:b, l:r, :])
+        #imsave(os.path.join(args.save_dir, d, args.mask_name), mask[t:b, l:r, :])
+        #imsave(os.path.join(args.save_dir, d, args.normal_name), normal[t:b, l:r, :])
+        pil_mask = Image.fromarray(mask[t:b, l:r, :])
+        pil_mask.save(os.path.join(args.save_dir, d, args.mask_name))
+        pil_normal = Image.fromarray(normal[t:b, l:r, :])
+        pil_normal.save(os.path.join(args.save_dir, d, args.normal_name))
         sio.savemat(os.path.join(args.save_dir, d, 'Normal_gt.mat'), 
                 {args.n_key: n_mat[t:b, l:r, :]} ,do_compression=True)
         copyTXT(d)
