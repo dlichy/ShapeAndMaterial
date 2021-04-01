@@ -21,15 +21,18 @@ This project uses the following dependencies:
 The easiest way to run the code is by creating a virtual environment and installing the dependences with pip e.g.
 ```shell
 # Create a new python3.8 environment named py3.8
-virtualenv py3.8 python=3.8
+virtualenv py3.8 -p python3.8
 
 # Activate the created environment
-source py3.8
+source py3.8/bin/activate
+
+#upgrade pip
+pip install --upgrade pip
 
 # To install dependencies 
-python3 -m pip install -r requirements.txt
+python -m pip install -r requirements.txt
 #or
-python3 -m pip install -r requirements_no_exr.txt
+python -m pip install -r requirements_no_exr.txt
 
 
 ```
