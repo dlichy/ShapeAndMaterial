@@ -1,7 +1,7 @@
 import os, argparse, sys, shutil, glob
 import numpy as np
-from imageio import imread, imsave
 import re
+from PIL import Image
 import scipy.io as sio
 import cv2
 root_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../')
@@ -68,11 +68,11 @@ def getBBoxCompact(mask):
     return l, r, t, b, h, w
 
 def loadMaskNormal(d):
-    mask   = imread(os.path.join(args.input_dir, d, args.mask_name))
+    mask   = np.array(Image.open(os.path.join(args.input_dir, d, args.mask_name)))
     try:
-        normal = imread(os.path.join(args.input_dir, d, args.normal_name))
+        normal = np.array(Image.open(os.path.join(args.input_dir, d, args.normal_name)))
     except IOError:
-        normal = imread(os.path.join(args.input_dir, d, 'normal_gt.png'))
+        normal = np.array(Image.open(os.path.join(args.input_dir, d, 'normal_gt.png')))
     n_mat  = sio.loadmat(os.path.join(args.input_dir, d, 'Normal_gt.mat'))[args.n_key]
     h, w, c = normal.shape
     print('Processing Objects: %s' % d, mask.shape)
