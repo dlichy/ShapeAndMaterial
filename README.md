@@ -64,24 +64,24 @@ We used this [flashlight](https://www.amazon.com/GearLight-TAC-Tactical-Flashlig
 
 <img src="./media/capture_process_gif.gif" width="960" height="540">
 
-Please see [Project Page](https://dlichy.github.io/ShapeAndMaterialAtHome/) for a higher resolution version of this video.
+Please see the [Project Page](https://dlichy.github.io/ShapeAndMaterialAtHome/) for a higher resolution version of this video.
 
 
 
 #### Example reconstructions:
 
 <p float="left">
-<img src="./media/squirrel_cup/images_s5_b0_ch6.png" width="180" height="200">
-<img src="./media/bear_cup/images_s5_b0_ch6.png" width="180" height="200">
-<img src="./media/black_skull/images_s5_b0_ch6.png" width="180" height="200">
-<img src="./media/white_skull/images_s5_b0_ch6.png" width="180" height="200">
-<img src="./media/hat/images_s5_b0_ch6.png" width="200" height="180">
+<img src="./media/squirrel_cup/images_s5_b0_ch6.png" width="180" height="180">
+<img src="./media/bear_cup/images_s5_b0_ch6.png" width="180" height="180">
+<img src="./media/black_skull/images_s5_b0_ch6.png" width="180" height="180">
+<img src="./media/white_skull/images_s5_b0_ch6.png" width="180" height="180">
+<img src="./media/hat/images_s5_b0_ch6.png" width="180" height="180">
 <br>
-<img src="./media/squirrel_cup/object_motion_video_gif.gif" width="180" height="200">
-<img src="./media/bear_cup/object_motion_video_gif.gif" width="180" height="200">
-<img src="./media/black_skull/object_motion_video_gif.gif" width="180" height="200">
-<img src="./media/white_skull/object_motion_video_gif.gif" width="180" height="200">
-<img src="./media/hat/object_motion_video_gif.gif" width="180" height="200">
+<img src="./media/squirrel_cup/object_motion_video_gif.gif" width="180" height="180">
+<img src="./media/bear_cup/object_motion_video_gif.gif" width="180" height="180">
+<img src="./media/black_skull/object_motion_video_gif.gif" width="180" height="180">
+<img src="./media/white_skull/object_motion_video_gif.gif" width="180" height="180">
+<img src="./media/hat/object_motion_video_gif.gif" width="180" height="180">
 </p>
 
 
@@ -149,7 +149,7 @@ python eval_standard.py results_path --dataset_root path_to_dataset_dir --gpu
 python eval_standard.py results_path --dataset_root data/sample_dataset --gpu
 ```
 
-### Download our real dataset
+#### Download our real dataset
 Coming Soon...
 
 ## Integrating Normal Maps and Producing a Mesh
@@ -168,7 +168,7 @@ To train RecNet from scratch:
 ```shell
 python train.py log_dir --dr_dataset_root path_to_dr_dataset --sculpt_dataset_root path_to_sculpture_dataset --gpu
 ```
-### Download the training data
+#### Download the training data
 Coming Soon...
 
 
