@@ -71,15 +71,15 @@ Please see the [Project Page](https://dlichy.github.io/ShapeAndMaterialAtHome/) 
 #### Example reconstructions:
 
 <p float="left">
-<img src="./media/bear_cup/images_s5_b0_ch6.png" width="170" height="170">
-<img src="./media/black_skull/images_s5_b0_ch6.png" width="170" height="170">
-<img src="./media/white_skull/images_s5_b0_ch6.png" width="170" height="170">
-<img src="./media/hat/images_s5_b0_ch6.png" width="170" height="170">
+<img src="./media/bear_cup/images_s5_b0_ch6.png" width="180" height="180">
+<img src="./media/black_skull/images_s5_b0_ch6.png" width="180" height="180">
+<img src="./media/white_skull/images_s5_b0_ch6.png" width="180" height="180">
+<img src="./media/hat/images_s5_b0_ch6.png" width="180" height="180">
 <br>
-<img src="./media/bear_cup/object_motion_video_gif.gif" width="170" height="170">
-<img src="./media/black_skull/object_motion_video_gif.gif" width="170" height="170">
-<img src="./media/white_skull/object_motion_video_gif.gif" width="170" height="170">
-<img src="./media/hat/object_motion_video_gif.gif" width="170" height="170">
+<img src="./media/bear_cup/object_motion_video_gif.gif" width="180" height="180">
+<img src="./media/black_skull/object_motion_video_gif.gif" width="180" height="180">
+<img src="./media/white_skull/object_motion_video_gif.gif" width="180" height="180">
+<img src="./media/hat/object_motion_video_gif.gif" width="180" height="180">
 </p>
 
 
