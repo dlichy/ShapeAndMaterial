@@ -1,11 +1,29 @@
 
-**[Shape and Material Capture at Home, CVPR 2021]**.
-<br>
-Daniel Lichy, Jiaye Wu, [Soumyadip Sengupta](https://homes.cs.washington.edu/~soumya91/), [David Jacobs](http://www.cs.umd.edu/~djacobs/)
-<br>
+# **[Shape and Material Capture at Home, CVPR 2021](https://dlichy.github.io/ShapeAndMaterialAtHome/)**.
+[Daniel Lichy](http://www.cs.umd.edu/~dlichy/), Jiaye Wu, [Soumyadip Sengupta](https://homes.cs.washington.edu/~soumya91/), [David Jacobs](http://www.cs.umd.edu/~djacobs/)
+
+
+<!--<figure class="image">
+  <img src="./media/teaser2.png">
+  <figcaption>{bare-bones capture setup}</figcaption>
+</figure>-->
+
+<p>
+    <img src="./media/teaser2.png" alt>
+    <em>A bare-bones capture setup</em>
+</p>
+
+## Overview
 
 This is the official code release for the paper *Shape and Material Capture at Home*. The code enables you to
-reconstruct a 3D mesh and Cook-Torrance BRDF from one or more images captured with a flashlight or camera flash. 
+reconstruct a 3D mesh and Cook-Torrance BRDF from one or more images captured with a flashlight or camera with flash. 
+
+We provide:
+- The trained RecNet model.
+- Code to test on the DiLiGenT dataset.
+- Code to test on our dataset from the paper.
+- Code to test on your own dataset.
+- Code to train a new model, including code for visualization and logging.
 
 ## Dependencies
 This project uses the following dependencies:
@@ -36,30 +54,55 @@ python -m pip install -r requirements_no_exr.txt
 
 
 ```
-## Overview
-We provide:
-- The trained RecNet model.
-- Code to test on the DiLiGenT dataset.
-- Code to test on our dataset from the paper.
-- Code to test on your own dataset.
-- Code to train a new model, including code for visualization and logging.
 
 ## Capturing you own dataset
 ### Multi-image captures
-The video below shows how to capture the (up to) six images for you own dataset. Angles are approximate and can be estimated by eye.
+The video below shows how to capture the (up to) six images for you own dataset. Angles are approximate and can be estimated by eye. The camera should be approximately 1 to 4 feet from the object. The flashlight should be far enough from the object such that the entire object is in the illumination cone of the flashlight.
+
+We used this [flashlight](https://www.amazon.com/GearLight-TAC-Tactical-Flashlight-PACK/dp/B07VNCWZBF?pd_rd_w=qOsxX&pf_rd_p=3b2464be-88ad-4bc6-b457-b3c351da1533&pf_rd_r=8Y2G3A0F0TKFWCEKECYG&pd_rd_r=e2063b40-e7a0-42d7-b015-2e34abf17361&pd_rd_wg=S35fJ&pd_rd_i=B07VNCWZBF&psc=1&ref_=pd_bap_d_rp_29_t), but any bright flashlight should work. We used this [tripod](https://www.amazon.com/gp/product/B07ZV4QX6C/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) which comes with a handy remote for iPhone and Android. 
+
+
+<img src="./media/capture_process_gif.gif" width="960" height="540">
+
+Please see [Project Page](https://dlichy.github.io/ShapeAndMaterialAtHome/) for a higher resolution version of this video.
+
+
+
+#### Example reconstructions:
+
+<p float="left">
+<img src="./media/squirrel_cup/images_s5_b0_ch6.png" width="180" height="200">
+<img src="./media/bear_cup/images_s5_b0_ch6.png" width="180" height="200">
+<img src="./media/black_skull/images_s5_b0_ch6.png" width="180" height="200">
+<img src="./media/white_skull/images_s5_b0_ch6.png" width="180" height="200">
+<img src="./media/hat/images_s5_b0_ch6.png" width="200" height="180">
+<br>
+<img src="./media/squirrel_cup/object_motion_video_gif.gif" width="180" height="200">
+<img src="./media/bear_cup/object_motion_video_gif.gif" width="180" height="200">
+<img src="./media/black_skull/object_motion_video_gif.gif" width="180" height="200">
+<img src="./media/white_skull/object_motion_video_gif.gif" width="180" height="200">
+<img src="./media/hat/object_motion_video_gif.gif" width="180" height="200">
+</p>
+
 
 ### Single image captures
 Our network also provides state-of-the-art results for reconstructing shape and material from a single flash image.
 
-Examples captured with just an iPhone with flash enabled in a dim room (complete darkness is not needed):
+#### Examples captured with just an iPhone with flash enabled in a dim room (complete darkness is not needed):
 
-Coming soon...
+<p float="left">
+<img src="./media/single_skull/images_s5_b0_ch6.png" width="200" height="200">
+<img src="./media/single_starwars_cup/images_s5_b0_ch6.png" width="200" height="200">
+<br>
+<img src="./media/single_skull/object_motion_video_gif.gif" width="200" height="200">
+<img src="./media/single_starwars_cup/object_motion_video_gif.gif" width="200" height="200">
+</p>
 
 ### Mask Making
-For best performance you should supply a segmentation mask with you image. For our paper we used https://github.com/saic-vul/fbrs_interactive_segmentation
+For best performance you should supply a segmentation mask with your image. For our paper we used https://github.com/saic-vul/fbrs_interactive_segmentation
 which enables mask making with just a few clicks.
 
-Normals results are reasonable without the mask, but integrating normals to a mesh can be challenging.
+Normal prediction results are reasonable without the mask, but integrating normals to a mesh without the mask can be challenging.
 
 ## Test RecNet on the DiLiGenT dataset
 ```shell
@@ -118,6 +161,8 @@ Running the following command with produce a ply mesh in results_path/images/sam
 python integrate_normals.py results_path/images/integration_data.csv --gpu
 ```
 
+This is the most time intensive part of the reconstruction and takes about 3 minutes to run on GPU and 5 minutes on CPU.
+
 ## Training
 To train RecNet from scratch:
 ```shell
@@ -128,7 +173,7 @@ Coming Soon...
 
 
 ## FAQ
-#### Q1: What should I do if I have problem in running your code?
+#### Q1: What should I do if I have problem running your code?
 - Please create an issue if you encounter errors when trying to run the code. Please also feel free to submit a bug report.
 
 
