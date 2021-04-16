@@ -33,7 +33,7 @@ else:
 		warnings.warn('running on CPU but GPUs detected. Add arg "--gpu" to run on gpu')
 	device='cpu'
 	
-load_checkpoint(opt.checkpoint, net=net,device=device)
+load_checkpoint(opt.checkpoint, net=net, device=device)
 
 
 criterion = Criterion()

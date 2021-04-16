@@ -18,6 +18,8 @@ opt = parser.parse_args()
 
 #channel_names is only used if reading exr images
 def load_image(im_path, channel_names=['R','G','B']):
+	if im_path is None:
+		return None
 	if not os.path.exists(im_path):
 		return None
 	if os.path.splitext(im_path)[1]=='.exr':

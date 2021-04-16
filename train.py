@@ -79,7 +79,7 @@ optimizer = optim.Adam(net.parameters(), lr=opt.lr)
 if opt.checkpoint == 'None':
 	start_epoch = 0
 else:
-	start_epoch = load_checkpoint(opt.checkpoint, net=net, optimizer=optimizer)
+	start_epoch = load_checkpoint(opt.checkpoint, net=net, optimizer=optimizer,device=device)
 
 if opt.gpu:
 	net = nn.DataParallel(net)	
