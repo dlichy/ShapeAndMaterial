@@ -148,7 +148,7 @@ python eval_standard.py results_path --dataset_root data/sample_dataset --gpu
 ```
 
 #### Download our real dataset
-Our real dataset can be downloaded here https://drive.google.com/file/d/1yYMhF3GTzyqM1eA1mUte9rhgbNLqBRk5/view?usp=sharing. To test
+Our real dataset can be downloaded [here](https://drive.google.com/file/d/1yYMhF3GTzyqM1eA1mUte9rhgbNLqBRk5/view?usp=sharing) (56MB). To test
 our network on it, first unzip it, then run with the command above, setting "dataset_root" to the path of the unzipped data.
 
 ## Integrating Normal Maps and Producing a Mesh
@@ -168,7 +168,12 @@ To train RecNet from scratch:
 python train.py log_dir --dr_dataset_root path_to_dr_dataset --sculpt_dataset_root path_to_sculpture_dataset --gpu
 ```
 #### Download the training data
-Coming Soon...
+Our network is trained on two synthetic datasets available here:
+[synthetic_sculpture_dataset](https://drive.google.com/file/d/1CcI0DXcxz116vGQu9jDfbyLHd0Qbkyuq/view?usp=sharing) (23GB) and
+[synthetic_DR_dataset](https://drive.google.com/file/d/1uf3zVcdWBIXawPRLQzVilZoBHfqwSV1r/view?usp=sharing) (45GB)
+
+synthetic_sculpture_dataset uses meshes from the sculpture dataset available at https://www.robots.ox.ac.uk/~vgg/data/SilNet/
+synthetic_DR_dataset uses random meshes available at https://github.com/zexiangxu/Deep-Relighting 
 
 
 ## FAQ
