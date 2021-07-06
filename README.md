@@ -148,7 +148,8 @@ python eval_standard.py results_path --dataset_root data/sample_dataset --gpu
 ```
 
 #### Download our real dataset
-Coming Soon...
+Our real dataset can be downloaded here https://drive.google.com/file/d/1yYMhF3GTzyqM1eA1mUte9rhgbNLqBRk5/view?usp=sharing. To test
+our network on it, first unzip it, then run with the command above, setting "dataset_root" to the path of the unzipped data.
 
 ## Integrating Normal Maps and Producing a Mesh
 We include a script to integrate normals and produce a ply mesh with per vertex albedo and roughness.
